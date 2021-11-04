@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rabatiproject/semaver/issues"
   },
-  "homepage": "https://github.com/rabatiproject/semaver#readme"
+  "homepage": "https://github.com/rabatiproject/semaver#readme",
+  "dependencies": {
+    "vorpal": "^1.12.0"
+  }
 }
