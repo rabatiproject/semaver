@@ -14,9 +14,9 @@ Extra documentation goes here
 `
 
 UpdateCommand.flags = {
-  major: flags.boolean({char: 'mj', description: 'increase major version'}),
-  minor: flags.boolean({char: 'mn', description: 'increase minor version'}),
-  patch: flags.boolean({char: 'pc', description: 'increase patch version'}),
+  major: flags.boolean({char: 'mj', description: 'increase major version', required: false}),
+  minor: flags.boolean({char: 'mn', description: 'increase minor version', required: false}),
+  patch: flags.boolean({char: 'pc', description: 'increase patch version', required: false}),
 }
 
 module.exports = UpdateCommand

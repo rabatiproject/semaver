@@ -1,10 +1,12 @@
 const {Command, flags} = require('@oclif/command')
 
 class CreateCommand extends Command {
+
   async run() {
+
+
     const {flags} = this.parse(CreateCommand)
-    const name = flags.name || 'world'
-    this.log(`hello ${name} from ./src/commands/hello.js`)
+    this.log(flags)
   }
 }
 
@@ -14,7 +16,7 @@ Extra documentation goes here
 `
 
 CreateCommand.flags = {
-  name: flags.string({char: 'n', description: 'name to print'}),
+  initial: flags.string({char: 'i', description: 'initial version', required: false}),
 }
 
 module.exports = CreateCommand
