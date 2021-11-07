@@ -1,10 +1,36 @@
 const FILE_NAME = '.version.json';
-const fs = require('fs');
+const FILE_PATH = './' + FILE_NAME
+const
+  fs = require('fs');
 
 
 function checkFileExists() {
-  return fs.existsSync('./' + FILE_NAME);
+  return fs.existsSync(FILE_PATH);
 }
+
+function getCurrentVersion() {
+  let rawData = fs.readFileSync(FILE_PATH)
+  return JSON.parse(rawData).version;
+}
+
+function updatePart(index) {
+  let currentVersion = getCurrentVersion()
+  let fields = currentVersion.split('.')
+  fields[index] = (parseInt(fields[index]) + 1) + "";
+  updateFile(fields.join('.'));
+}
+
+function updateFile(newVersion) {
+  let jsonData = getFileContentAsJson();
+  jsonData.version = newVersion
+  saveToFile(jsonData);
+}
+
+function getFileContentAsJson() {
+  let rawData = fs.readFileSync(FILE_PATH)
+  return JSON.parse(rawData);
+}
+
 
 function createFile(initialVersion) {
 
@@ -20,7 +46,7 @@ function createFile(initialVersion) {
   console.log(`creating with ${version}`);
 
   const fileContent = {version: version};
-  fs.writeFileSync(FILE_NAME, JSON.stringify(fileContent));
+  saveToFile(fileContent);
 
 }
 
@@ -28,6 +54,11 @@ function checkVersionIsSemantic(version) {
   return version.match(/((\w|\d)+\.){2}(\w|\d)/g);
 }
 
+function saveToFile(fileContent) {
+  fs.writeFileSync(FILE_NAME, JSON.stringify(fileContent));
+}
+
 module.exports = {
-  createFile
+  createFile,
+  updatePart
 };
