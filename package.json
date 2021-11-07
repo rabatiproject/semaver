@@ -1,5 +1,5 @@
 {
-  "name": "semantic-versioner",
+  "name": "@rabati/semaver",
   "version": "0.0.0",
   "author": "Deniz @denizgursoy",
   "bin": {
