@@ -1,12 +1,16 @@
 const {Command, flags} = require('@oclif/command')
+const {createFile} = require('../commons/checkFile.js')
 
 class CreateCommand extends Command {
 
   async run() {
-
-
     const {flags} = this.parse(CreateCommand)
-    this.log(flags)
+
+    try {
+      createFile(flags.initial);
+    } catch (e) {
+      this.log(e);
+    }
   }
 }
 
