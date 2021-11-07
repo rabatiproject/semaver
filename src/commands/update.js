@@ -1,22 +1,20 @@
 const {Command, flags} = require('@oclif/command')
-const {updatePart} = require("../commons/checkFile");
-
+const {updatePart} = require('../commons/check-file')
 
 class UpdateCommand extends Command {
   async run() {
     const {flags} = this.parse(UpdateCommand)
-    console.log(flags);
     if (flags.major) {
       this.log('increasing major')
-      updatePart(0);
+      updatePart(0)
     }
     if (flags.minor) {
       this.log('increasing minor')
-      updatePart(1);
+      updatePart(1)
     }
     if (flags.patch) {
       this.log('increasing patch')
-      updatePart(2);
+      updatePart(2)
     }
 
     if (flags.tag) {
