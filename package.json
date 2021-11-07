@@ -1,11 +1,11 @@
 {
   "name": "@rabati/semaver",
-  "version": "0.0.0",
-  "author": "Deniz @denizgursoy",
+  "version": "0.0.1",
+  "author": "rabati.org",
   "bin": {
     "semaver": "./bin/run"
   },
-  "bugs": "https://github.com/denizgursoy/semaver/issues",
+  "bugs": "https://github.com/rabatiproject/semaver/issues",
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
@@ -30,7 +30,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/denizgursoy/semaver",
+  "homepage": "https://github.com/rabatiproject/semaver",
   "keywords": [
     "oclif"
   ],
@@ -43,7 +43,10 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "denizgursoy/semaver",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rabatiproject/semaver"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint .",
