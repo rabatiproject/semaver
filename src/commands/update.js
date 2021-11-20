@@ -23,10 +23,7 @@ class UpdateCommand extends Command {
   }
 }
 
-UpdateCommand.description = `Describe the command here
-...
-Extra documentation goes here
-`
+UpdateCommand.description = `Updates version specified in the .version file`
 
 UpdateCommand.flags = {
   major: flags.boolean({char: 'x', description: 'increase major version', required: false}),

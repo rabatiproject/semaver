@@ -13,10 +13,7 @@ class CreateCommand extends Command {
   }
 }
 
-CreateCommand.description = `Describe the command here
-...
-Extra documentation goes here
-`
+CreateCommand.description = `Creates .version file`
 
 CreateCommand.flags = {
   initial: flags.string({char: 'i', description: 'initial version', required: false}),
